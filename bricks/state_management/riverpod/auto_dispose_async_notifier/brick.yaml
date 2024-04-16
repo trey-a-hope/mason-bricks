@@ -1,0 +1,20 @@
+name: auto_dispose_async_notifier
+
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+environment:
+  mason: ">=0.1.0-dev.47 <0.1.0"
+
+vars:
+  name:
+    type: string
+    description: Name of notifier.
+    default: MyExample
+    prompt: What is the name of the AutoDisposeAsyncNotifier?
+  
+  type:
+    type: string
+    description: Object type for state.
+    default: int
+    prompt: What is the state of this notifier?

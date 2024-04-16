@@ -1,0 +1,11 @@
+name: mason_bricks
+
+environment:
+  sdk: '^3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_riverpod: ^2.5.1
+  get: ^4.6.6
