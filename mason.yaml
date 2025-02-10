@@ -1,16 +1,11 @@
 bricks:
   getx:
-    path: 
-      bricks/state_management/getx
-
+    path: bricks/state_management/getx
   sprite_component:
-    path: 
-      bricks/flame/sprite_component
-
+    path: bricks/flame/sprite_component
   auto_dispose_async_notifier:
-    path:
-      bricks/state_management/riverpod/auto_dispose_async_notifier
-
+    path: bricks/state_management/riverpod/auto_dispose_async_notifier
   async_notifier:
-    path:
-      bricks/state_management/riverpod/async_notifier
+    path: bricks/state_management/riverpod/async_notifier
+  smart_bloc:
+    path: bricks/state_management/smart_bloc
