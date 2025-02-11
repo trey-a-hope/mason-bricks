@@ -1,12 +1,12 @@
 part of '{{feature_name.snakeCase()}}_bloc.dart';
 
-class {{feature_name.pascalCase()s}}sState {
+class {{feature_name.pascalCase()}}sState {
   final String? cursor;
   {{#base_state_vars}}
   final {{{.}}}
   {{/base_state_vars}}
 
-  {{feature_name.pascalCase()s}}State({
+  {{feature_name.pascalCase()}}sState({
     required this.cursor,
     {{#base_state_vars}}
     required this.{{{.}}},
@@ -14,8 +14,8 @@ class {{feature_name.pascalCase()s}}sState {
   });
 }
 
-class {{feature_name.pascalCase()s}}Initial extends {{feature_name.pascalCase()s}}State {
-  {{feature_name.pascalCase()s}}Initial({
+class {{feature_name.pascalCase()}}sInitial extends {{feature_name.pascalCase()}}sState {
+  {{feature_name.pascalCase()}}sInitial({
     required super.cursor,
     {{#base_state_vars}}
     required super.{{{.}}},
@@ -23,8 +23,8 @@ class {{feature_name.pascalCase()s}}Initial extends {{feature_name.pascalCase()s
   });
 }
 
-class {{feature_name.pascalCase()s}}Loading extends {{feature_name.pascalCase()s}}State {
-  {{feature_name.pascalCase()s}}Loading({
+class {{feature_name.pascalCase()}}sLoading extends {{feature_name.pascalCase()}}sState {
+  {{feature_name.pascalCase()}}sLoading({
     required super.cursor,
     {{#base_state_vars}}
     required super.{{{.}}},
@@ -32,10 +32,10 @@ class {{feature_name.pascalCase()s}}Loading extends {{feature_name.pascalCase()s
   });
 }
 
-class {{feature_name.pascalCase()s}}Loaded extends {{feature_name.pascalCase()s}}State {
-  final List<{{model_name.pascalCase()s}}> {{feature_name.camelCase()}};
+class {{feature_name.pascalCase()}}sLoaded extends {{feature_name.pascalCase()}}sState {
+  final List<{{model_name.pascalCase()}}s> {{feature_name.camelCase()}};
 
-  {{feature_name.pascalCase()s}}Loaded({
+  {{feature_name.pascalCase()}}sLoaded({
     required this.{{feature_name.camelCase()}},
     required super.cursor,
     {{#base_state_vars}}
@@ -44,10 +44,10 @@ class {{feature_name.pascalCase()s}}Loaded extends {{feature_name.pascalCase()s}
   });
 }
 
-class {{feature_name.pascalCase()s}}Success extends {{feature_name.pascalCase()s}}State {
+class {{feature_name.pascalCase()}}sSuccess extends {{feature_name.pascalCase()}}sState {
   final String message;
 
-  {{feature_name.pascalCase()s}}Success({
+  {{feature_name.pascalCase()}}sSuccess({
     required this.message,
     required super.cursor,
     {{#base_state_vars}}
@@ -56,10 +56,10 @@ class {{feature_name.pascalCase()s}}Success extends {{feature_name.pascalCase()s
   });
 }
 
-class {{feature_name.pascalCase()s}}Error extends {{feature_name.pascalCase()s}}State {
+class {{feature_name.pascalCase()}}sError extends {{feature_name.pascalCase()}}sState {
   final String message;
 
-  {{feature_name.pascalCase()s}}Error({
+  {{feature_name.pascalCase()}}sError({
     required this.message,
     required super.cursor,
     {{#base_state_vars}}
