@@ -33,7 +33,7 @@ class {{feature_name.pascalCase()}}sLoading extends {{feature_name.pascalCase()}
 }
 
 class {{feature_name.pascalCase()}}sLoaded extends {{feature_name.pascalCase()}}sState {
-  final List<{{model_name.pascalCase()}}> {{feature_name.camelCase()}};
+  final List<{{model_name.pascalCase()}}> {{feature_name.camelCase()}}s;
 
   {{feature_name.pascalCase()}}sLoaded({
     required this.{{feature_name.camelCase()}},
