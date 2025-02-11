@@ -7,7 +7,6 @@ class Fetch{{feature_name.pascalCase()}}s extends {{feature_name.pascalCase()}}E
 
 class FetchMore{{feature_name.pascalCase()}}s extends {{feature_name.pascalCase()}}Event {}
 {{/include_fetch}}
-
 {{#include_create}}
 class Create{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {
   final Map<String, dynamic> data;
@@ -15,7 +14,6 @@ class Create{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}E
   Create{{feature_name.pascalCase()}}({required this.data});
 }
 {{/include_create}}
-
 {{#include_read}}
 class Read{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {
   final String id;
@@ -23,7 +21,6 @@ class Read{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Eve
   Read{{feature_name.pascalCase()}}({required this.id});
 }
 {{/include_read}}
-
 {{#include_update}}
 class Update{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {
   final String id;
@@ -35,7 +32,6 @@ class Update{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}E
   });
 }
 {{/include_update}}
-
 {{#include_delete}}
 class Delete{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {
   final String id;
