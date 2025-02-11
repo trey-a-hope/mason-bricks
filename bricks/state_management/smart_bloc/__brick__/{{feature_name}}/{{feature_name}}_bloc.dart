@@ -8,7 +8,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
   {{feature_name.pascalCase()}}Bloc({
     required this.authBloc,
   })  : _nakamaService = NakamaService(),
-        super({{feature_name.pascalCase()}}Initial(cursor: null)) {
+        super({{feature_name.pascalCase()}}sInitial(cursor: null)) {
     {{#include_fetch}}on<Fetch{{feature_name.pascalCase()}}s>(_onFetch{{feature_name.pascalCase()}}s);
     on<FetchMore{{feature_name.pascalCase()}}s>(_onFetchMore{{feature_name.pascalCase()}}s);{{/include_fetch}}
     {{#include_create}}on<Create{{feature_name.pascalCase()}}>(_onCreate{{feature_name.pascalCase()}});{{/include_create}}
@@ -22,7 +22,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     Fetch{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
   ) async {
-    emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
+    emit({{feature_name.pascalCase()}}sLoading(cursor: state.cursor));
 
     try {
       // TODO: Implement fetch logic here
@@ -31,21 +31,21 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
       // final cursor = response.cursor;
 
       emit(
-        {{feature_name.pascalCase()}}Loaded(
+        {{feature_name.pascalCase()}}sLoaded(
           {{feature_name.camelCase()}}: {{feature_name.camelCase()}},
           cursor: cursor,
         ),
       );
     } on GrpcError catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: e.message ?? 'Unknown GRPC Error: ${e.codeName}',
           cursor: state.cursor,
         ),
       );
     } catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: 'Unexpected error: ${e.toString()}',
           cursor: state.cursor,
         ),
@@ -57,7 +57,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     FetchMore{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
   ) async {
-    emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
+    emit({{feature_name.pascalCase()}}sLoading(cursor: state.cursor));
 
     try {
       // TODO: Implement fetch more logic here
@@ -65,25 +65,25 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
       // final {{feature_name.camelCase()}} = response.{{feature_name.camelCase()}};
       // final cursor = response.cursor;
 
-      if (state is {{feature_name.pascalCase()}}Loaded) {
-        final currentState = state as {{feature_name.pascalCase()}}Loaded;
+      if (state is {{feature_name.pascalCase()}}sLoaded) {
+        final currentState = state as {{feature_name.pascalCase()}}sLoaded;
         emit(
-          {{feature_name.pascalCase()}}Loaded(
-            {{feature_name.camelCase()}}: [...currentState.{{feature_name.camelCase()}}, ...{{feature_name.camelCase()}}],
+          {{feature_name.pascalCase()}}sLoaded(
+            {{feature_name.camelCase()}}s: [...currentState.{{feature_name.camelCase()}}s, ...{{feature_name.camelCase()}}s],
             cursor: cursor,
           ),
         );
       }
     } on GrpcError catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: e.message ?? 'Unknown GRPC Error: ${e.codeName}',
           cursor: state.cursor,
         ),
       );
     } catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: 'Unexpected error: ${e.toString()}',
           cursor: state.cursor,
         ),
@@ -97,28 +97,28 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     Create{{feature_name.pascalCase()}} event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
   ) async {
-    emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
+    emit({{feature_name.pascalCase()}}sLoading(cursor: state.cursor));
 
     try {
       // TODO: Implement create logic here
       // await _nakamaService.create{{feature_name.pascalCase()}}(event.data);
 
       emit(
-        {{feature_name.pascalCase()}}Success(
+        {{feature_name.pascalCase()}}sSuccess(
           message: '{{feature_name.pascalCase()}} created successfully',
           cursor: state.cursor,
         ),
       );
     } on GrpcError catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: e.message ?? 'Unknown GRPC Error: ${e.codeName}',
           cursor: state.cursor,
         ),
       );
     } catch (e) {
       emit(
-        {{feature_name.pascalCase()}}Error(
+        {{feature_name.pascalCase()}}sError(
           message: 'Unexpected error: ${e.toString()}',
           cursor: state.cursor,
         ),
