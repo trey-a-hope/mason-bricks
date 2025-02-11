@@ -1,5 +1,5 @@
-part '{{feature_name.snakeCase()}}_event.dart';
-part '{{feature_name.snakeCase()}}_state.dart';
+part '../{{feature_name}}/{{feature_name.snakeCase()}}_event.dart';
+part '../{{feature_name}}/{{feature_name.snakeCase()}}_state.dart';
 
 class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()}}Event, {{feature_name.pascalCase()}}State> {
   final AuthBloc authBloc;
