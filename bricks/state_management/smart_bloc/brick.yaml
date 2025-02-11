@@ -38,5 +38,5 @@ vars:
     type: boolean
     description: Include a Delete event
     prompt: Do you want to include a Delete event?
-    default: false
+    # default: false
 
