@@ -14,6 +14,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
         super({{feature_name.pascalCase()}}Initial(cursor: null)) {
     on<Fetch{{feature_name.pascalCase()}}>(_onFetch{{feature_name.pascalCase()}});
     on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});
+    {{#include_delete}}on<Delete{{feature_name.pascalCase()}}>(_onDelete{{feature_name.pascalCase()}});{{/include_delete}}
   }
 
   Future<void> _onFetch{{feature_name.pascalCase()}}(
@@ -88,4 +89,35 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
       );
     }
   }
+
+  {{#include_delete}}
+  Future<void> _onDelete{{feature_name.pascalCase()}}(
+    Delete{{feature_name.pascalCase()}} event,
+    Emitter<{{feature_name.pascalCase()}}State> emit,
+  ) async {
+    emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
+
+    try {
+      // TODO: Delete logic here...
+
+      emit(
+        {{feature_name.pascalCase()}}Success(
+          message: '{{feature_name.pascalCase()}} deleted successfully',
+          cursor: state.cursor,
+        ),
+      );
+    } on GrpcError catch (e) {
+      emit({{feature_name.pascalCase()}}Error(
+          cursor: state.cursor,
+          message: e.message ?? 'Unknown GRPC Error: ${e.codeName}'));
+    } catch (e) {
+      emit(
+        {{feature_name.pascalCase()}}Error(
+          cursor: state.cursor,
+          message: 'Unexpected error: ${e.toString()}',
+        ),
+      );
+    }
+  }
+  {{/include_delete}}
 }
