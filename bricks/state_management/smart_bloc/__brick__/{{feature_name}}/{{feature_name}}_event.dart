@@ -3,9 +3,9 @@ part of '{{feature_name.snakeCase()}}_bloc.dart';
 sealed class {{feature_name.pascalCase()}}Event {}
 
 {{#include_fetch}}
-class Fetch{{feature_name.pascalCase()s}} extends {{feature_name.pascalCase()}}Event {}
+class Fetch{{feature_name.pascalCase()}}s extends {{feature_name.pascalCase()}}Event {}
 
-class FetchMore{{feature_name.pascalCase()s}} extends {{feature_name.pascalCase()}}Event {}
+class FetchMore{{feature_name.pascalCase()}}s extends {{feature_name.pascalCase()}}Event {}
 {{/include_fetch}}
 
 {{#include_create}}
