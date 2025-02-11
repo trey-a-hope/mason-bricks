@@ -9,8 +9,8 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     required this.authBloc,
   })  : _nakamaService = NakamaService(),
         super({{feature_name.pascalCase()}}Initial(cursor: null)) {
-    {{#include_fetch}}on<Fetch{{feature_name.pascalCase()}}>(_onFetch{{feature_name.pascalCase()}});
-    on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});{{/include_fetch}}
+    {{#include_fetch}}on<Fetch{{feature_name.pascalCase()}}s>(_onFetch{{feature_name.pascalCase()}}s);
+    on<FetchMore{{feature_name.pascalCase()}}s>(_onFetchMore{{feature_name.pascalCase()}}s);{{/include_fetch}}
     {{#include_create}}on<Create{{feature_name.pascalCase()}}>(_onCreate{{feature_name.pascalCase()}});{{/include_create}}
     {{#include_read}}on<Read{{feature_name.pascalCase()}}>(_onRead{{feature_name.pascalCase()}});{{/include_read}}
     {{#include_update}}on<Update{{feature_name.pascalCase()}}>(_onUpdate{{feature_name.pascalCase()}});{{/include_update}}
@@ -18,8 +18,8 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
   }
 
   {{#include_fetch}}
-  Future<void> _onFetch{{feature_name.pascalCase()}}(
-    Fetch{{feature_name.pascalCase()}} event,
+  Future<void> _onFetch{{feature_name.pascalCase()}}s(
+    Fetch{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
   ) async {
     emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
@@ -53,8 +53,8 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     }
   }
 
-  Future<void> _onFetchMore{{feature_name.pascalCase()}}(
-    FetchMore{{feature_name.pascalCase()}} event,
+  Future<void> _onFetchMore{{feature_name.pascalCase()}}s(
+    FetchMore{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
   ) async {
     emit({{feature_name.pascalCase()}}Loading(cursor: state.cursor));
