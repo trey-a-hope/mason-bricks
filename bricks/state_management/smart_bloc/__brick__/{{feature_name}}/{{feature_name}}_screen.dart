@@ -18,7 +18,7 @@
   @override
   Widget build(BuildContext context) {
     return GGScaffoldWidget(
-      title: '{{feature_name.pascalCase()}}',
+      title: '{{feature_name.pascalCase()}}s',
       child: Center(
         child: BlocConsumer<{{feature_name.pascalCase()}}Bloc, {{feature_name.pascalCase()}}State>(
           listener: listener,

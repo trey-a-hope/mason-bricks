@@ -10,7 +10,7 @@ vars:
   feature_name:
     type: string
     description: The name of the feature (e.g., friends, products)
-    prompt: What is the name of your feature?
+    prompt: What is the name of your feature? (i.e., 'friend', 'product', or 'order')
   include_fetch:
     type: boolean
     description: Include a Fetch event
