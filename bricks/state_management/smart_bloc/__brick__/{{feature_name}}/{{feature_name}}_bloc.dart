@@ -10,7 +10,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
   })  : _nakamaService = NakamaService(),
         super({{feature_name.pascalCase()}}Initial(cursor: null)) {
    {{#include_fetch}}on<Fetch{{feature_name.pascalCase()}}>(_onFetch{{feature_name.pascalCase()}});
-    on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});{{/#include_fetch}}
+    on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});{{/include_fetch}}
     {{#include_delete}}on<Delete{{feature_name.pascalCase()}}>(_onDelete{{feature_name.pascalCase()}});{{/include_delete}}
   }
 
@@ -87,7 +87,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
       );
     }
   }
-  {{/#include_fetch}}
+  {{/include_fetch}}
 
   {{#include_delete}}
   Future<void> _onDelete{{feature_name.pascalCase()}}(

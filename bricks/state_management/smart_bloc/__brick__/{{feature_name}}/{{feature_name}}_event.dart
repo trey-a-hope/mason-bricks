@@ -6,7 +6,7 @@ sealed class {{feature_name.pascalCase()}}Event {}
 class Fetch{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {}
 
 class FetchMore{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {}
-{{/#include_fetch}}
+{{/include_fetch}}
 
 {{#include_delete}}
 class Delete{{feature_name.pascalCase()}} extends {{feature_name.pascalCase()}}Event {
