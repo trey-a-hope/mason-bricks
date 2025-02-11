@@ -34,4 +34,9 @@ vars:
     type: string
     description: The name of the main model (e.g., Friend, Product)
     prompt: What is the name of your model?
+  include_delete:
+    type: boolean
+    description: Include a Delete event
+    prompt: Do you want to include a Delete event?
+    default: false
 
