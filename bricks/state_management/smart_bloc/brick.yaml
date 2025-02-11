@@ -34,6 +34,11 @@ vars:
     type: string
     description: The name of the main model (e.g., Friend, Product)
     prompt: What is the name of your model?
+  include_fetch:
+    type: boolean
+    description: Include a Fetch event
+    prompt: Do you want to include a Fetch event?
+    default: false
   include_delete:
     type: boolean
     description: Include a Delete event
@@ -43,4 +48,3 @@ vars:
     type: string
     description: The title shown in the app bar
     prompt: What is the screen title?
-

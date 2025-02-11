@@ -1,6 +1,3 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grpc/grpc.dart';
-
 part '{{feature_name.snakeCase()}}_event.dart';
 part '{{feature_name.snakeCase()}}_state.dart';
 
@@ -12,11 +9,12 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
     required this.authBloc,
   })  : _nakamaService = NakamaService(),
         super({{feature_name.pascalCase()}}Initial(cursor: null)) {
-    on<Fetch{{feature_name.pascalCase()}}>(_onFetch{{feature_name.pascalCase()}});
-    on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});
+   {{#include_fetch}}on<Fetch{{feature_name.pascalCase()}}>(_onFetch{{feature_name.pascalCase()}});
+    on<FetchMore{{feature_name.pascalCase()}}>(_onFetchMore{{feature_name.pascalCase()}});{{/#include_fetch}}
     {{#include_delete}}on<Delete{{feature_name.pascalCase()}}>(_onDelete{{feature_name.pascalCase()}});{{/include_delete}}
   }
 
+  {{#include_fetch}}
   Future<void> _onFetch{{feature_name.pascalCase()}}(
     Fetch{{feature_name.pascalCase()}} event,
     Emitter<{{feature_name.pascalCase()}}State> emit,
@@ -89,6 +87,7 @@ class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()
       );
     }
   }
+  {{/#include_fetch}}
 
   {{#include_delete}}
   Future<void> _onDelete{{feature_name.pascalCase()}}(
