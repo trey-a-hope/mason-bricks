@@ -1,5 +1,6 @@
  import 'package:flutter/material.dart';
- 
+ import 'package:smart_bloc/smart_bloc.dart';
+
  class {{feature_name.pascalCase()}}Screen extends SmartBloc<{{feature_name.pascalCase()}}Bloc, {{feature_name.pascalCase()}}State> {
   const {{feature_name.pascalCase()}}Screen({
     super.key,

@@ -1,3 +1,5 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 part '../{{feature_name}}/{{feature_name.snakeCase()}}_event.dart';
 part '../{{feature_name}}/{{feature_name.snakeCase()}}_state.dart';
 
