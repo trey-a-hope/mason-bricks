@@ -11,6 +11,10 @@ vars:
     type: string
     description: The name of the feature (e.g., friends, products)
     prompt: Feature? (i.e., 'friend' or 'product')
+  state_object:
+    type: string
+    description: Object type for the state.
+    prompt: Object type? (i.e., 'String', 'int', 'double')
   include_fetch:
     type: boolean
     description: Include a Fetch event
