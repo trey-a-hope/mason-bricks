@@ -9,3 +9,4 @@ dependencies:
 
   flutter_riverpod: ^2.5.1
   get: ^4.6.6
+  mason: ^0.1.0

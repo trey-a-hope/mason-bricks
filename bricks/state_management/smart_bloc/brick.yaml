@@ -10,25 +10,20 @@ vars:
   feature_name:
     type: string
     description: The name of the feature (e.g., friends, products)
-    prompt: Feature? (i.e., 'friend' or 'product')
+    prompt: Feature? (i.e., 'friend' or 'direct_message')
   state_object:
     type: string
     description: Object type for the state.
-    prompt: Object type? (i.e., 'String', 'int', 'double')
+    prompt: Object type? (i.e., 'String', 'int', 'double', 'DateTime')
   include_fetch:
     type: boolean
-    description: Include a Fetch event
-    prompt: Do you want to include a Fetch event?
+    description: Include a List or Read event
+    prompt: Do you want to include a List(y) or Read(N) event?
     default: false
   include_create:
     type: boolean
     description: Include a Create event
     prompt: Do you want to include a Create event?
-    default: false
-  include_read:
-    type: boolean
-    description: Include a Read event
-    prompt: Do you want to include a Read event?
     default: false
   include_update:
     type: boolean
