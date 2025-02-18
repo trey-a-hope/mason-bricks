@@ -3,7 +3,7 @@ part of '{{feature_name.snakeCase()}}_bloc.dart';
 class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   final String? cursor;
 
-  {{feature_name.pascalCase()}}State({
+  {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State({
     required this.cursor,
   });
 }
