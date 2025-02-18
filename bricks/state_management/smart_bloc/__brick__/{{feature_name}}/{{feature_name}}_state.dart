@@ -8,19 +8,19 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   });
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Initial extends {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Initial extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Initial({
     required super.cursor,
   });
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading extends {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading({
     required super.cursor,
   });
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded extends {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   {{#include_fetch}}
   final List<{{state_object.pascalCase()}}> {{feature_name.camelCase()}}s;
   {{/include_fetch}}
@@ -39,7 +39,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded e
   });
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Success extends {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Success extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   final String message;
 
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Success({
@@ -48,7 +48,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Success 
   });
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error extends {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   final String message;
 
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error({
