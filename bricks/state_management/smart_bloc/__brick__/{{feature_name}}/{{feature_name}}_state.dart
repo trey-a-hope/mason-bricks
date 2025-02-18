@@ -20,14 +20,24 @@ class {{feature_name.pascalCase()}}sLoading extends {{feature_name.pascalCase()}
   });
 }
 
-class {{feature_name.pascalCase()}}sLoaded extends {{feature_name.pascalCase()}}State {
-  final List<{{feature_name.pascalCase()}}> {{feature_name.camelCase()}}s;
+// class {{feature_name.pascalCase()}}sLoaded extends {{feature_name.pascalCase()}}State {
+//   {{#include_fetch}}
+//   final List<{{feature_name.pascalCase()}}> {{feature_name.camelCase()}}s;
+//   {{/include_fetch}}
+//   {{^include_fetch}}
+//   final {{feature_name.pascalCase()}} {{feature_name.camelCase()}};
+//   {{/include_fetch}}
 
-  {{feature_name.pascalCase()}}sLoaded({
-    required this.{{feature_name.camelCase()}}s,
-    required super.cursor,
-  });
-}
+//   {{feature_name.pascalCase()}}sLoaded({
+//     {{#include_fetch}}
+//     required this.{{feature_name.camelCase()}}s,
+//     {{/include_fetch}}
+//     {{^include_fetch}}
+//     required this.{{feature_name.camelCase()}},
+//     {{/include_fetch}}
+//     required super.cursor,
+//   });
+// }
 
 class {{feature_name.pascalCase()}}sSuccess extends {{feature_name.pascalCase()}}State {
   final String message;
