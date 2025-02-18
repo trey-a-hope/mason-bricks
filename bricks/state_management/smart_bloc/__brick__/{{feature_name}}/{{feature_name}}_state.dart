@@ -1,6 +1,6 @@
 part of '{{feature_name.snakeCase()}}_bloc.dart';
 
-class {{feature_name.pascalCase()}}State {
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   final String? cursor;
 
   {{feature_name.pascalCase()}}State({
@@ -22,10 +22,10 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading 
 
 class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded extends {{feature_name.pascalCase()}}State {
   {{#include_fetch}}
-  final List<{{feature_name.pascalCase()}}> {{feature_name.camelCase()}}s;
+  final List<{{state_object.pascalCase()}}> {{feature_name.camelCase()}}s;
   {{/include_fetch}}
   {{^include_fetch}}
-  final {{feature_name.pascalCase()}} {{feature_name.camelCase()}};
+  final {{state_object.pascalCase()}} {{feature_name.camelCase()}};
   {{/include_fetch}}
 
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded({
