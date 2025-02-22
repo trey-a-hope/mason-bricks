@@ -1,6 +1,6 @@
 part of '{{feature_name.snakeCase()}}{{#include_fetch}}s{{/include_fetch}}_bloc.dart';
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
+sealed class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   {{#include_fetch}}
   final String? cursor;
 
