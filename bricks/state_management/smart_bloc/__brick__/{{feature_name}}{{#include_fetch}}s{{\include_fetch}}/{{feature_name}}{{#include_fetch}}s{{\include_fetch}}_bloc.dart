@@ -9,11 +9,11 @@ part '{{feature_name.snakeCase()}}{{#include_fetch}}s{{/include_fetch}}_state.da
 
 class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc extends Bloc<{{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Event, {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State> {
   final AuthBloc authBloc;
-  final NakamaService _nakamaService;
+  final NakamaSessionService _nakamaSessionService;
 
   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc({
     required this.authBloc,
-  })  : _nakamaService = NakamaService(),
+  })  : _nakamaSessionService = NakamaSessionService(),
         {{#include_fetch}}
         super({{feature_name.pascalCase()}}sInitial(cursor: null)) {
         {{/include_fetch}}
@@ -41,7 +41,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement fetch logic here
-      // final response = await _nakamaService.fetch{{feature_name.pascalCase()}}s();
+      // final response = await _nakamaSessionService.fetch{{feature_name.pascalCase()}}s();
       // final {{feature_name.camelCase()}}s = response.{{feature_name.camelCase()}}s;
       // final cursor = response.cursor;
 
@@ -77,7 +77,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement fetch more logic here
-      // final response = await _nakamaService.fetch{{feature_name.pascalCase()}}s(cursor: state.cursor);
+      // final response = await _nakamaSessionService.fetch{{feature_name.pascalCase()}}s(cursor: state.cursor);
       // final {{feature_name.camelCase()}}s = response.{{feature_name.camelCase()}}s;
       // final cursor = response.cursor;
 
@@ -118,7 +118,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement read logic here
-      // final {{feature_name.camelCase()}} = await _nakamaService.read{{feature_name.pascalCase()}}(event.id);
+      // final {{feature_name.camelCase()}} = await _nakamaSessionService.read{{feature_name.pascalCase()}}(event.id);
 
       // emit(
       //   {{feature_name.pascalCase()}}Loaded(
@@ -156,7 +156,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement create logic here
-      // await _nakamaService.create{{feature_name.pascalCase()}}(event.data);
+      // await _nakamaSessionService.create{{feature_name.pascalCase()}}(event.data);
 
       // {{#include_fetch}}
       // emit(
@@ -224,7 +224,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement update logic here
-      // await _nakamaService.update{{feature_name.pascalCase()}}(event.id, event.data);
+      // await _nakamaSessionService.update{{feature_name.pascalCase()}}(event.id, event.data);
 
       // {{#include_fetch}}
       // emit(
@@ -292,7 +292,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
 
     try {
       // TODO: Implement delete logic here
-      // await _nakamaService.delete{{feature_name.pascalCase()}}(event.id);
+      // await _nakamaSessionService.delete{{feature_name.pascalCase()}}(event.id);
 
       // {{#include_fetch}}
       // emit(
