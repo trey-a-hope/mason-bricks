@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:gift_grab/data/services/nakama_service.dart';
+import 'package:gift_grab/data/services/nakama_session_service.dart';
 import 'package:gift_grab/domain/blocs/auth/auth_bloc.dart';
 import 'package:grpc/grpc.dart';
 
@@ -36,52 +36,24 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
   Future<void> _onFetch{{feature_name.pascalCase()}}s(
     Fetch{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}sState> emit,
-  ) async => await EventHandlerService.handleBlocEvent<{{feature_name.pascalCase()}}State>(
+  ) async => await EventHandlerService.handleBlocEvent<{{feature_name.pascalCase()}}sState>(
         action: () async {
-          throw UnimplimentedError();
+          throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}Error(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}Error(cursor: null,message: message),
       );
 
   Future<void> _onFetchMore{{feature_name.pascalCase()}}s(
     FetchMore{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}sState> emit,
-  ) async {
-    emit({{feature_name.pascalCase()}}sLoading(cursor: state.cursor));
-
-    try {
-      // TODO: Implement fetch more logic here
-      // final response = await _nakamaSessionService.fetch{{feature_name.pascalCase()}}s(cursor: state.cursor);
-      // final {{feature_name.camelCase()}}s = response.{{feature_name.camelCase()}}s;
-      // final cursor = response.cursor;
-
-      // if (state is {{feature_name.pascalCase()}}sLoaded) {
-      //   final currentState = state as {{feature_name.pascalCase()}}sLoaded;
-      //   emit(
-      //     {{feature_name.pascalCase()}}sLoaded(
-      //       {{feature_name.camelCase()}}s: [...currentState.{{feature_name.camelCase()}}s, ...<{{state_object_type}}>[]],
-      //       cursor: null,
-      //     ),
-      //   );
-      // }
-      throw UnimplementedError();
-    } on GrpcError catch (e) {
-      emit(
-        {{feature_name.pascalCase()}}sError(
-          message: e.message ?? 'Unknown GRPC Error: ${e.codeName}',
-          cursor: state.cursor,
-        ),
+  ) async => await EventHandlerService.handleBlocEvent<{{feature_name.pascalCase()}}sState>(
+        action: () async {
+          throw UnimplementedError();
+        },
+        emit: emit,
+        errorState: (message) => {{feature_name.pascalCase()}}Error(cursor: null,message: message),
       );
-    } catch (e) {
-      emit(
-        {{feature_name.pascalCase()}}sError(
-          message: 'Unexpected error: ${e.toString()}',
-          cursor: state.cursor,
-        ),
-      );
-    }
-  }
   {{/include_fetch}}
 
   {{^include_fetch}}
