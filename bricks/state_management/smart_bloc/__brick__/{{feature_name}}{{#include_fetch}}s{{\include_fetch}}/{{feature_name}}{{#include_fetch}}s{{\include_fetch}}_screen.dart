@@ -10,7 +10,7 @@
   @override
   Widget buildLoadedContent(BuildContext context, dynamic state) {
     state = state as {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded;
-    return SizedBox();
+    throw UnimplementedError();
   }
 
   @override

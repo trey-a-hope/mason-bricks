@@ -1,55 +1,37 @@
 part of '{{feature_name.snakeCase()}}{{#include_fetch}}s{{/include_fetch}}_bloc.dart';
 
 sealed class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
-  {{#include_fetch}}
   final String? cursor;
 
-  {{feature_name.pascalCase()}}sState({
-    required this.cursor,
+   {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State({
+    this.cursor,
   });
-  {{/include_fetch}}
-  {{^include_fetch}}
-  {{feature_name.pascalCase()}}State();
-  {{/include_fetch}}
 }
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Initial extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
-  {{#include_fetch}}
-  {{feature_name.pascalCase()}}sInitial({
-    required super.cursor,
-  });
-  {{/include_fetch}}
-  {{^include_fetch}}
-  {{feature_name.pascalCase()}}Initial() : super();
-  {{/include_fetch}}
-}
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Initial extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {}
 
-class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
-  {{#include_fetch}}
-  {{feature_name.pascalCase()}}sLoading({
-    required super.cursor,
-  });
-  {{/include_fetch}}
-  {{^include_fetch}}
-  {{feature_name.pascalCase()}}Loading() : super();
-  {{/include_fetch}}
-}
+class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loading extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {}
 
 class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Loaded extends {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}State {
   {{#include_fetch}}
   final List<{{state_object_type}}> {{feature_name.camelCase()}}s;
+  final String? newCursor;
+
 
   {{feature_name.pascalCase()}}sLoaded({
     required this.{{feature_name.camelCase()}}s,
-    required super.cursor,
-  });
+    this.newCursor,
+  }) : super(cursor: newCursor);
   {{/include_fetch}}
   {{^include_fetch}}
   final {{state_object_type}} {{feature_name.camelCase()}};
+  final String? newCursor;
+
 
   {{feature_name.pascalCase()}}Loaded({
     required this.{{feature_name.camelCase()}},
-  }) : super();
+    this.newCursor,
+  }) : super(cursor: newCursor);
   {{/include_fetch}}
 }
 
@@ -59,7 +41,6 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Success 
   {{#include_fetch}}
   {{feature_name.pascalCase()}}sSuccess({
     required this.message,
-    required super.cursor,
   });
   {{/include_fetch}}
   {{^include_fetch}}
@@ -75,7 +56,6 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error ex
   {{#include_fetch}}
   {{feature_name.pascalCase()}}sError({
     required this.message,
-    required super.cursor,
   });
   {{/include_fetch}}
   {{^include_fetch}}
