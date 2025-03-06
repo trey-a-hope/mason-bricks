@@ -36,38 +36,13 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
   Future<void> _onFetch{{feature_name.pascalCase()}}s(
     Fetch{{feature_name.pascalCase()}}s event,
     Emitter<{{feature_name.pascalCase()}}sState> emit,
-  ) async {
-    emit({{feature_name.pascalCase()}}sLoading(cursor: state.cursor));
-
-    try {
-      // TODO: Implement fetch logic here
-      // final response = await _nakamaSessionService.fetch{{feature_name.pascalCase()}}s();
-      // final {{feature_name.camelCase()}}s = response.{{feature_name.camelCase()}}s;
-      // final cursor = response.cursor;
-
-      // emit(
-      //   {{feature_name.pascalCase()}}sLoaded(
-      //     {{feature_name.camelCase()}}s: [],
-      //     cursor: null,
-      //   ),
-      // );
-      throw UnimplementedError();
-    } on GrpcError catch (e) {
-      emit(
-        {{feature_name.pascalCase()}}sError(
-          message: e.message ?? 'Unknown GRPC Error: ${e.codeName}',
-          cursor: state.cursor,
-        ),
+  ) async => await EventHandlerService.handleBlocEvent<{{feature_name.pascalCase()}}State>(
+        action: () async {
+          throw UnimplimentedError();
+        },
+        emit: emit,
+        errorState: (message) => {{feature_name.pascalCase()}}Error(message: message),
       );
-    } catch (e) {
-      emit(
-        {{feature_name.pascalCase()}}sError(
-          message: 'Unexpected error: ${e.toString()}',
-          cursor: state.cursor,
-        ),
-      );
-    }
-  }
 
   Future<void> _onFetchMore{{feature_name.pascalCase()}}s(
     FetchMore{{feature_name.pascalCase()}}s event,
