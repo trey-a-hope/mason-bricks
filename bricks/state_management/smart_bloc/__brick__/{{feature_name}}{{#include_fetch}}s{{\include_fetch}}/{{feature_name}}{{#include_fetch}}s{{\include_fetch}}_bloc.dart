@@ -36,7 +36,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}sError(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}sError(message),
       );
 
   Future<void> _onFetchMore{{feature_name.pascalCase()}}s(
@@ -47,7 +47,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}sError(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}sError(message),
       );
   {{/include_fetch}}
 
@@ -60,7 +60,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}Error(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}Error(message),
       );
   {{/include_fetch}}
 
@@ -73,7 +73,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message),
       );
   {{/include_create}}
 
@@ -86,7 +86,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message),
       );
   {{/include_update}}
 
@@ -99,7 +99,7 @@ class {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Bloc ext
           throw UnimplementedError();
         },
         emit: emit,
-        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message: message),
+        errorState: (message) => {{feature_name.pascalCase()}}{{#include_fetch}}s{{/include_fetch}}Error(message),
       );
   {{/include_delete}}
 }
