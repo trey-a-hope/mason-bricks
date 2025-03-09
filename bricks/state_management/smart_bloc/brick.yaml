@@ -5,33 +5,39 @@ version: 0.1.0+1
 
 environment:
   mason: ^0.1.0
-
+  
 vars:
   feature_name:
     type: string
-    description: The name of the feature (e.g., friends, products)
-    prompt: Feature? (i.e., 'friend' or 'direct_message')
+    description: Name of the feature
+    prompt: What is the feature name?
+  
   state_object:
     type: string
-    description: Object type for the state.
-    prompt: Object type? (i.e., 'String', 'int', 'double', 'DateTime')
-  include_fetch:
+    description: Type of the state object (leave empty for no state object)
+    prompt: What is the type of the state object? (leave empty for no state object)
+    default: ""
+  
+  is_multiple:
     type: boolean
-    description: Include a List or Read event
-    prompt: Do you want to include a List(y) or Read(N) event?
+    description: Whether the state object is a list/multiple
+    prompt: Is this a collection of objects (List)?
     default: false
+    
   include_create:
     type: boolean
-    description: Include a Create event
-    prompt: Do you want to include a Create event?
-    default: false
+    description: Include create event and handler
+    prompt: Include Create event?
+    default: true
+    
   include_update:
     type: boolean
-    description: Include an Update event
-    prompt: Do you want to include an Update event?
-    default: false
+    description: Include update event and handler
+    prompt: Include Update event?
+    default: true
+    
   include_delete:
     type: boolean
-    description: Include a Delete event
-    prompt: Do you want to include a Delete event?
-    default: false
+    description: Include delete event and handler
+    prompt: Include Delete event?
+    default: true
